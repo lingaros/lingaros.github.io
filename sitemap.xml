@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/page-codebase/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/code-review/git-flow/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/dependencies/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/code-review/develop/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/code-review/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/config/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/code-review/review/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/backing-services/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/buid-release-run/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/devops/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/continuous-delivery/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/processes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/port-binding/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/concurrency/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/disposability/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/dev-prod-parity/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/logs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/standart/admin-process/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/</loc>
+  </url>
+  
+  <url>
+    <loc>https://arslantopcu.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

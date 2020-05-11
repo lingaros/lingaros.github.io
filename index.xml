@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home Page on Continuous Delivery &amp; Development Standart Documentation</title>
+    <link>https://arslantopcu.github.io/</link>
+    <description>Recent content in Home Page on Continuous Delivery &amp; Development Standart Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://arslantopcu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Codebase</title>
+      <link>https://arslantopcu.github.io/standart/page-codebase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/page-codebase/</guid>
+      <description>All your application code lives in one repository. Once you get big, you may have a distributed system with multiple apps talking to each other (like a web application and a backend API), at which point you can treat them as separate apps with their own code repositories (still in source control, of course).  Importance: Non-negotiable</description>
+    </item>
+    
+    <item>
+      <title>Dependencies</title>
+      <link>https://arslantopcu.github.io/standart/dependencies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/dependencies/</guid>
+      <description>All the environments your code runs in need to have some dependencies, like a database, or an image processing library, or a command-line tool. Never let your application assume those things will be in place on a given machine. Ensure it by baking those dependencies into your software system.
+ Most languages and frameworks provide a natural way to do this. You list all the versions of all the libraries you expect to have in place, and when the code is deployed, a command is run to download all the right versions and put them in place.</description>
+    </item>
+    
+    <item>
+      <title>Config</title>
+      <link>https://arslantopcu.github.io/standart/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/config/</guid>
+      <description>Resource handles to the database, Memcache, Redis, etc.. All system/service configuration is stored in a separate and secure environment  Configuration is seperated from codebase Configuration is managed entirely by variables that can be changed/established on build Production Config files are managed in a private repository with 2-factor auth or managed as prompts Production Config files are included in .gitignore  Configuration is anything that may vary between different environments.</description>
+    </item>
+    
+    <item>
+      <title>Backing Services</title>
+      <link>https://arslantopcu.github.io/standart/backing-services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/backing-services/</guid>
+      <description>A backing service is any service the app consumes over the network as part of its normal operation. Examples include datastores (such as MySQL or CouchDB), messaging/queueing systems (such as RabbitMQ or Beanstalkd), SMTP services for outbound email (such as Postfix), and caching systems (such as Memcached). Your code will talk to many services, like a database, a cache, an email service, a queueing system, etc. These should all be referenced by a simple endpoint (URL) and maybe a username and password.</description>
+    </item>
+    
+    <item>
+      <title>Build, release, run</title>
+      <link>https://arslantopcu.github.io/standart/buid-release-run/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/buid-release-run/</guid>
+      <description>Build: code repo + dependencies + binary Release: Build output + config Run: The run stage (also known as “runtime”) runs the app in the execution environment, by launching some set of the app’s processes against a selected release.   A codebase is transformed into a (non-development) deploy through three stages:  The build stage is a transform which converts a code repo into an executable bundle known as a build.</description>
+    </item>
+    
+    <item>
+      <title>Processes</title>
+      <link>https://arslantopcu.github.io/standart/processes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/processes/</guid>
+      <description>Execute the app as one or more stateless processes The app is executed in the execution environment as one or more processes. It’s likely you will have your application running on many servers, because that makes it more fault tolerant, and because you can support more traffic. As a rule, you want each of those instances of running code to be stateless. In other words, the state of your system is completely defined by your databases and shared storage, and not by each individual running application instance.</description>
+    </item>
+    
+    <item>
+      <title>Port binding </title>
+      <link>https://arslantopcu.github.io/standart/port-binding/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/port-binding/</guid>
+      <description>Export services via port binding The twelve-factor app is completely self-contained and does not rely on runtime injection of a webserver into the execution environment to create a web-facing service. The web app exports HTTP as a service by binding to a port, and listening to requests coming in on that port. In a local development environment, the developer visits a service URL like http://localhost:5000/ to access the service exported by their app.</description>
+    </item>
+    
+    <item>
+      <title>Concurrency</title>
+      <link>https://arslantopcu.github.io/standart/concurrency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/concurrency/</guid>
+      <description>When running your code, the idea is that lots of little processes are handling specific needs. So you might have dozens of handlers at the ready to process web requests, and another dozen to handle API calls for your enterprise users. And still another half-dozen processing background welcome-emails going to new users, or sending tweets for your users sharing things on your social media service.  Importance: Low</description>
+    </item>
+    
+    <item>
+      <title>Disposability</title>
+      <link>https://arslantopcu.github.io/standart/disposability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/disposability/</guid>
+      <description>When you deploy new code, you want that new version to launch right away and start to handle traffic. If an application has to do 20 seconds of work (say, loading giant mapping files into RAM) before it’s ready to handle real traffic, you’ve made it harder to rapidly release code, and you’ve introduced more churn on the system to stop/start independent processes. With the proliferation of so many 3rd party libraries in today’s software systems, sub–1-second startup times are less and less common.</description>
+    </item>
+    
+    <item>
+      <title>Dev Prod Parity</title>
+      <link>https://arslantopcu.github.io/standart/dev-prod-parity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/dev-prod-parity/</guid>
+      <description>Dev/Prod parity Vagrant files  Container apps  Historically, there have been substantial gaps between development (a developer making live edits to a local deploy of the app) and production (a running deploy of the app accessed by end users). These gaps manifest in three areas:  The time gap: A developer may work on code that takes days, weeks, or even months to go into production The personnel gap: Developers write code, ops engineers deploy it.</description>
+    </item>
+    
+    <item>
+      <title>Logs</title>
+      <link>https://arslantopcu.github.io/standart/logs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/logs/</guid>
+      <description>A twelve-factor app never concerns itself with routing or storage of its output stream. It should not attempt to write to or manage logfiles. Instead, each running process writes its event stream, unbuffered, to stdout. During local development, the developer will view this stream in the foreground of their terminal to observe the app’s behavior.  Importance: Low</description>
+    </item>
+    
+    <item>
+      <title>Admin processes</title>
+      <link>https://arslantopcu.github.io/standart/admin-process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arslantopcu.github.io/standart/admin-process/</guid>
+      <description>You’ll want to do lots of one-off administrative tasks once you have a live app. For example, doing data cleanup on bad data you discover; running analytics for a presentation you are putting together, or turning on and off features for A/B testing. Usually a developer will run these tasks, and when they do, they should be doing it from a machine in the production environment that’s running the latest version of the production code.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,162 @@
+[
+{
+	"uri": "https://arslantopcu.github.io/standart/page-codebase/",
+	"title": "Codebase",
+	"tags": [],
+	"description": "",
+	"content": " All your application code lives in one repository. Once you get big, you may have a distributed system with multiple apps talking to each other (like a web application and a backend API), at which point you can treat them as separate apps with their own code repositories (still in source control, of course).  Importance: Non-negotiable\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/",
+	"title": "Development Standarts",
+	"tags": [],
+	"description": "",
+	"content": "  Codebase   Dependencies   Config   Backing Services   Build, release, run   Processes   Port binding    Concurrency   Disposability   Dev Prod Parity   Logs   Admin processes   App check list  Use VCS(subversion, git) Execution environment is isolated It is easy to access Backen Service Build, Stage, Run environment is sperated Use process manages to manage the application Support short startup time and graceful shutdown Dev environment is identical to prod environment Collect logs in the datastore by the another app  "
+},
+{
+	"uri": "https://arslantopcu.github.io/code-review/git-flow/",
+	"title": "Git branch naming conventions",
+	"tags": [],
+	"description": "",
+	"content": " Format  sprint-no/type/issue-number  master hotfix release develop  feature bugfix poc   git branch sprint-1/feature/task-1\n "
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/dependencies/",
+	"title": "Dependencies",
+	"tags": [],
+	"description": "",
+	"content": " All the environments your code runs in need to have some dependencies, like a database, or an image processing library, or a command-line tool. Never let your application assume those things will be in place on a given machine. Ensure it by baking those dependencies into your software system.\n Most languages and frameworks provide a natural way to do this. You list all the versions of all the libraries you expect to have in place, and when the code is deployed, a command is run to download all the right versions and put them in place. No guesswork, everything as it needs to be\n A twelve-factor app never relies on implicit existence of system-wide packages. It declares all dependencies, completely and exactly, via a dependency declaration manifest. Furthermore, it uses a dependency isolation tool during execution to ensure that no implicit dependencies “leak in” from the surrounding system. The full and explicit dependency specification is applied uniformly to both production and development.\n For example, Bundler for Java-Maven, Python-pip , Linux-Makefile\n  Importance: High\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/code-review/develop/",
+	"title": "Development",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://arslantopcu.github.io/code-review/",
+	"title": "Development &amp; Review",
+	"tags": [],
+	"description": "",
+	"content": "New development and code review follow.\n Selected Issue Pull last development code  git pull origin development  Create branch with topic number  Format: sprint-no/type/issue-number Type: Feature, bugfix, hot-fix, poc Example: sprint-1/bugfix/task-1  Development task Testing from local development environment Merge from development Push remote branch  git push origin sprint-1/bugfix/task-1  Request reviews and wait for approvals.  Development vs sprint-1/bugfix/task-1   "
+},
+{
+	"uri": "https://arslantopcu.github.io/test/",
+	"title": "Build and Test",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/config/",
+	"title": "Config",
+	"tags": [],
+	"description": "",
+	"content": " Resource handles to the database, Memcache, Redis, etc.. All system/service configuration is stored in a separate and secure environment  Configuration is seperated from codebase Configuration is managed entirely by variables that can be changed/established on build Production Config files are managed in a private repository with 2-factor auth or managed as prompts Production Config files are included in .gitignore  Configuration is anything that may vary between different environments. Code is all the stuff that doesn’t. Apps sometimes store config as constants in the code. This is a violation of twelve-factor, which requires strict separation of config from code. Config varies substantially across deploys, code does not. The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.  Importance: Medium\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/code-review/review/",
+	"title": "Review",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/backing-services/",
+	"title": "Backing Services",
+	"tags": [],
+	"description": "",
+	"content": " A backing service is any service the app consumes over the network as part of its normal operation. Examples include datastores (such as MySQL or CouchDB), messaging/queueing systems (such as RabbitMQ or Beanstalkd), SMTP services for outbound email (such as Postfix), and caching systems (such as Memcached). Your code will talk to many services, like a database, a cache, an email service, a queueing system, etc. These should all be referenced by a simple endpoint (URL) and maybe a username and password. They might be running on the same machine, or they might be on a different host, in a different datacenter, or managed by a cloud SaaS company. The point is, your code shouldn’t know the difference. This is another case where defining your dependencies cleanly keeps your system flexible and each part is abstracted from the complexities of the others…a core tenet of good architecture. The code for a twelve-factor app makes no distinction between local and third party services. To the app, both are attached resources, accessed via a URL or other locator/credentials stored in the config. A deploy of the twelve-factor app should be able to swap out a local MySQL database with one managed by a third party (such as Amazon RDS) without any changes to the app’s code. Likewise, a local SMTP server could be swapped with a third-party SMTP service (such as Postmark) without code changes. In both cases, only the resource handle in the config needs to change.  Importance: High\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/buid-release-run/",
+	"title": "Build, release, run",
+	"tags": [],
+	"description": "",
+	"content": " Build: code repo + dependencies + binary Release: Build output + config Run: The run stage (also known as “runtime”) runs the app in the execution environment, by launching some set of the app’s processes against a selected release.   A codebase is transformed into a (non-development) deploy through three stages:  The build stage is a transform which converts a code repo into an executable bundle known as a build. Using a version of the code at a commit specified by the deployment process, the build stage fetches vendors dependencies and compiles binaries and assets. The release stage takes the build produced by the build stage and combines it with the deploy’s current config. The resulting release contains both the build and the config and is ready for immediate execution in the execution environment. The run stage (also known as “runtime”) runs the app in the execution environment, by launching some set of the app’s processes against a selected release.   Every release should always have a unique release ID, such as a timestamp of the release (such as 2011-04-06-20:32:17) or an incrementing number (such as v100). Releases are an append-only ledger and a release cannot be mutated once it is created. Any change must create a new release.\nBuilds are initiated by the app’s developers whenever new code is deployed. Runtime execution, by contrast, can happen automatically in cases such as a server reboot, or a crashed process being restarted by the process manager. Therefore, the run stage should be kept to as few moving parts as possible, since problems that prevent an app from running can cause it to break in the middle of the night when no developers are on hand. The build stage can be more complex, since errors are always in the foreground for a developer who is driving the deploy.\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/devops/",
+	"title": "Devops",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://arslantopcu.github.io/continuous-delivery/",
+	"title": "Continuous Delivery",
+	"tags": [],
+	"description": "",
+	"content": "A good deployment pipeline has numerous feedback loops along the way. At each stage of the pipeline, verifications are run. If they pass, the pipeline continues. If they fail, the pipeline halts and the team responds appropriately to the feedback. The feedback along the way prevents CD from being chaos. Poor quality will almost never reach production in a well-designed pipeline.\nMost of the feedback loops you find in a deployment pipeline are good practices in and of themselves. You might already be doing some or most of them. We think you should have many of these in place before moving forward with CD.\nFull Article\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/processes/",
+	"title": "Processes",
+	"tags": [],
+	"description": "",
+	"content": " Execute the app as one or more stateless processes The app is executed in the execution environment as one or more processes. It’s likely you will have your application running on many servers, because that makes it more fault tolerant, and because you can support more traffic. As a rule, you want each of those instances of running code to be stateless. In other words, the state of your system is completely defined by your databases and shared storage, and not by each individual running application instance. Twelve-factor processes are stateless and share-nothing. Any data that needs to persist must be stored in a stateful backing service, typically a database. The memory space or filesystem of the process can be used as a brief, single-transaction cache. For example, downloading a large file, operating on it, and storing the results of the operation in the database. The twelve-factor app never assumes that anything cached in memory or on disk will be available on a future request or job – with many processes of each type running, chances are high that a future request will be served by a different process. Even when running only one process, a restart (triggered by code deploy, config change, or the execution environment relocating the process to a different physical location) will usually wipe out all local (e.g., memory and filesystem) state.  Importance: High\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/port-binding/",
+	"title": "Port binding ",
+	"tags": [],
+	"description": "",
+	"content": " Export services via port binding The twelve-factor app is completely self-contained and does not rely on runtime injection of a webserver into the execution environment to create a web-facing service. The web app exports HTTP as a service by binding to a port, and listening to requests coming in on that port. In a local development environment, the developer visits a service URL like http://localhost:5000/ to access the service exported by their app. In deployment, a routing layer handles routing requests from a public-facing hostname to the port-bound web processes.  Importance: Medium\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/concurrency/",
+	"title": "Concurrency",
+	"tags": [],
+	"description": "",
+	"content": " When running your code, the idea is that lots of little processes are handling specific needs. So you might have dozens of handlers at the ready to process web requests, and another dozen to handle API calls for your enterprise users. And still another half-dozen processing background welcome-emails going to new users, or sending tweets for your users sharing things on your social media service.  Importance: Low\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/disposability/",
+	"title": "Disposability",
+	"tags": [],
+	"description": "",
+	"content": " When you deploy new code, you want that new version to launch right away and start to handle traffic. If an application has to do 20 seconds of work (say, loading giant mapping files into RAM) before it’s ready to handle real traffic, you’ve made it harder to rapidly release code, and you’ve introduced more churn on the system to stop/start independent processes. With the proliferation of so many 3rd party libraries in today’s software systems, sub–1-second startup times are less and less common. But beyond loading code, your application should have everything it needs waiting in high-speed databases or caches, so it can start up snappily and be ready to serve requests. The twelve-factor app’s processes are disposable, meaning they can be started or stopped at a moment’s notice. This facilitates fast elastic scaling, rapid deployment of code or config changes, and robustness of production deploys.  Importance: Medium\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/dev-prod-parity/",
+	"title": "Dev Prod Parity",
+	"tags": [],
+	"description": "",
+	"content": " Dev/Prod parity Vagrant files  Container apps  Historically, there have been substantial gaps between development (a developer making live edits to a local deploy of the app) and production (a running deploy of the app accessed by end users). These gaps manifest in three areas:  The time gap: A developer may work on code that takes days, weeks, or even months to go into production The personnel gap: Developers write code, ops engineers deploy it. The tools gap: Developers may be using a stack like Nginx, SQLite, and OS X, while the production deploy uses Apache, MySQL, and Linux.  It has become in vogue in recent years to have a much more rapid cycle between developing a change to your app and deploying that change into production. For many companies, this happens in a matter of hours. In order to facilitate that shorter cycle, and the risk that something breaks when entering production, it’s desirable to keep a developer’s local environment as similar as possible to production.  "
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/logs/",
+	"title": "Logs",
+	"tags": [],
+	"description": "",
+	"content": " A twelve-factor app never concerns itself with routing or storage of its output stream. It should not attempt to write to or manage logfiles. Instead, each running process writes its event stream, unbuffered, to stdout. During local development, the developer will view this stream in the foreground of their terminal to observe the app’s behavior.  Importance: Low\n"
+},
+{
+	"uri": "https://arslantopcu.github.io/standart/admin-process/",
+	"title": "Admin processes",
+	"tags": [],
+	"description": "",
+	"content": " You’ll want to do lots of one-off administrative tasks once you have a live app. For example, doing data cleanup on bad data you discover; running analytics for a presentation you are putting together, or turning on and off features for A/B testing. Usually a developer will run these tasks, and when they do, they should be doing it from a machine in the production environment that’s running the latest version of the production code. In other words, run one-off admin tasks from an identical environment as production. Don’t run updates directly against a database, don’t run them from a local terminal window.  "
+},
+{
+	"uri": "https://arslantopcu.github.io/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://arslantopcu.github.io/",
+	"title": "Home Page",
+	"tags": [],
+	"description": "",
+	"content": " Development Manifesto In the modern era, software is commonly delivered as a service: called web apps, or software-as-a-service. The twelve-factor app is a methodology for building software-as-a-service apps that:\n Use declarative formats for setup automation, to minimize time and cost for new developers joining the project; Have a clean contract with the underlying operating system, offering maximum portability between execution environments; Are suitable for deployment on modern cloud platforms, obviating the need for servers and systems administration; Minimize divergence between development and production, enabling continuous deployment for maximum agility; And can scale up without significant changes to tooling, architecture, or development practices.  The twelve-factor methodology can be applied to apps written in any programming language, and which use any combination of backing services (database, queue, memory cache, etc).\n Read more\n Application Review Check List  All application cloud based improvement (dockerize apps) Development apps full documentation Coding standart  "
+},
+{
+	"uri": "https://arslantopcu.github.io/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

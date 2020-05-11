@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.36" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/dev-ico.png" type="image/x-icon " />
+<link rel="icon " href="/images/dev-ico.png" type="image/x-icon " />
+    <title>Port binding  :: Continuous Delivery &amp; Development Standart Documentation</title>
+    
+    
+    <link href="/css/nucleus.css?1520446462" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1520446462" rel="stylesheet">
+    <link href="/css/hybrid.css?1520446462" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1520446462" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1520446462" rel="stylesheet">
+    <link href="/css/auto-complete.css?1520446462" rel="stylesheet">
+    <link href="/css/theme.css?1520446462" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1520446462" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1520446462"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/standart/port-binding/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+	<img src="/images/logo.jpg" width="50%" style="border-radius:10px;" />
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1520446462"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1520446462"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/';
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1520446462"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/standart/" title="Development Standarts" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/standart/">
+          <b>1. </b>Development Standarts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/page-codebase/" title="Codebase" class="dd-item ">
+        <a href="/standart/page-codebase/">
+        <b>a. </b>Codebase
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/dependencies/" title="Dependencies" class="dd-item ">
+        <a href="/standart/dependencies/">
+        <b>b. </b>Dependencies
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/config/" title="Config" class="dd-item ">
+        <a href="/standart/config/">
+        <b>c. </b>Config
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/backing-services/" title="Backing Services" class="dd-item ">
+        <a href="/standart/backing-services/">
+        <b>d. </b>Backing Services
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/buid-release-run/" title="Build, release, run" class="dd-item ">
+        <a href="/standart/buid-release-run/">
+        <b>e. </b>Build, release, run
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/processes/" title="Processes" class="dd-item ">
+        <a href="/standart/processes/">
+        <b>g. </b>Processes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/port-binding/" title="Port binding " class="dd-item active">
+        <a href="/standart/port-binding/">
+        <b>h. </b>Port binding 
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/concurrency/" title="Concurrency" class="dd-item ">
+        <a href="/standart/concurrency/">
+        <b>i. </b>Concurrency
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/disposability/" title="Disposability" class="dd-item ">
+        <a href="/standart/disposability/">
+        <b>j. </b>Disposability
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/dev-prod-parity/" title="Dev Prod Parity" class="dd-item ">
+        <a href="/standart/dev-prod-parity/">
+        <b>k. </b>Dev Prod Parity
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/logs/" title="Logs" class="dd-item ">
+        <a href="/standart/logs/">
+        <b>m. </b>Logs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/standart/admin-process/" title="Admin processes" class="dd-item ">
+        <a href="/standart/admin-process/">
+        <b>n. </b>Admin processes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/code-review/" title="Development &amp; Review" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/code-review/">
+          <b>2. </b>Development &amp; Review
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/code-review/git-flow/" title="Git branch naming conventions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/code-review/git-flow/">
+          <b>a. </b>Git branch naming conventions
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/code-review/develop/" title="Development" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/code-review/develop/">
+          <b>b. </b>Development
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/code-review/review/" title="Review" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/code-review/review/">
+          <b>c. </b>Review
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/test/" title="Build and Test" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/test/">
+          <b>3. </b>Build and Test
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/" title="Devops" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/">
+          <b>4. </b>Devops
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/continuous-delivery/" title="Continuous Delivery" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/continuous-delivery/">
+          <b>5. </b>Continuous Delivery
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href=""><i class='fa fa-github'></i>LingaROS</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Home Page</a> > <a href='/standart/'>Development Standarts</a> > Port binding 
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Port binding </h1>
+          
+
+        
+
+
+<ul>
+<li>Export services via port binding</li>
+<li>The twelve-factor app is completely self-contained and does not rely on runtime injection of a webserver into the execution environment to create a web-facing service. The web app exports HTTP as a service by binding to a port, and listening to requests coming in on that port.</li>
+<li>In a local development environment, the developer visits a service URL like <a href="http://localhost:5000/">http://localhost:5000/</a> to access the service exported by their app. In deployment, a routing layer handles routing requests from a public-facing hostname to the port-bound web processes.</li>
+</ul>
+
+<p><em>Importance: Medium</em></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/standart/processes/" title="Processes"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/standart/concurrency/" title="Concurrency" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1520446462"></script>
+    <script src="/js/perfect-scrollbar.min.js?1520446462"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1520446462"></script>
+    <script src="/js/jquery.sticky.js?1520446462"></script>
+    <script src="/js/featherlight.min.js?1520446462"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1520446462"></script>
+    <script src="/js/highlight.pack.js?1520446462"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1520446462"></script>
+    <script src="/js/learn.js?1520446462"></script>
+    <script src="/js/hugo-learn.js?1520446462"></script>
+
+    <link href="/mermaid/mermaid.css?1520446462" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1520446462"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
